@@ -1,5 +1,10 @@
 <?php
 
+Route::any('/', function () {
+    return "wow";
+});
+
+Route::group(['prefix' => 'api/v1'], function (){
 //except because we won't make edit or create html pages
 Route::resource('meeting','MeetingController', [ 'except' => ['edit', 'create'] ]);
 
@@ -8,6 +13,6 @@ Route::resource('meeting/registration','RegistrationController', [ 'only' => ['s
 Route::post('user', ['uses' => 'AuthController@store']);
 
 Route::post('user/signin', ['uses' => 'AuthController@signin']);
-
+});
 
 
