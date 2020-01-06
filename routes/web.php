@@ -1,10 +1,10 @@
 <?php
 
-Route::any('/', function () {
-    return "wow";
-});
 
-Route::group(['prefix' => 'api/v1'], function (){
+
+Route::group(['prefix' => 'api/v1'], function ()
+{
+    
 //except because we won't make edit or create html pages
 Route::resource('meeting','MeetingController', [ 'except' => ['edit', 'create'] ]);
 
